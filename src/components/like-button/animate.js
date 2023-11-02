@@ -528,9 +528,9 @@ function ellipse(
 
 function randomPhysics(opts) {
   // 将角度从度转换为弧度
-  var radAngle = opts.angle * (Math.PI / 180)
+  let radAngle = opts.angle * (Math.PI / 180)
   // 将扩散角度从度转换为弧度
-  var radSpread = opts.spread * (Math.PI / 180)
+  let radSpread = opts.spread * (Math.PI / 180)
 
   return {
     x: opts.x, // 彩带的初始x坐标
@@ -700,12 +700,12 @@ function updateFetti(context, fetti) {
 }
 
 function animate(canvas, fettis, resizer, size, done) {
-  var animatingFettis = fettis.slice()
-  var context = canvas.getContext('2d')
-  var animationFrame
-  var destroy
+  let animatingFettis = fettis.slice()
+  let context = canvas.getContext('2d')
+  let animationFrame
+  let destroy
 
-  var prom = promise(function (resolve) {
+  const prom = promise(function (resolve) {
     function onDone() {
       animationFrame = destroy = null
 
